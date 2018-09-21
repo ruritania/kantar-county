@@ -1,0 +1,222 @@
+:root {
+    --annotation-color: #35C0CA;
+}
+
+/* ----------- FONTS ----------- */
+
+@font-face {
+    font-family: "Kantar Brown";
+    src: url("fonts/KantarBrown-Thin.otf");
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Kantar Brown";
+    src: url("fonts/KantarBrown-ThinItalic.otf");
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Kantar Brown";
+    src: url("fonts/KantarBrown-Light.otf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Kantar Brown";
+    src: url("fonts/KantarBrown-LightItalic.otf");
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Kantar Brown";
+    src: url("fonts/KantarBrown-Regular.otf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Kantar Brown";
+    src: url("fonts/KantarBrown-Italic.otf");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Kantar Brown";
+    src: url("fonts/KantarBrown-Bold.otf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* ----------- GENERAL ----------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kantar Brown', sans-serif;
+}
+
+p {
+    margin: 1em 0 1.4em 0;
+    line-height: 1.6;
+}
+
+b {
+    font-weight: 400;
+}
+
+.magenta {
+    color: #E5007E;
+}
+.turquoise {
+    color: #0096AE;
+}
+.green {
+    color: #93C01F;
+}
+.orange {
+    color: #EB6728;
+}
+
+#movie-container {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    background-color: black;
+}
+
+/* ----------- TOP LOGOS ----------- */
+
+#top-logo-row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    width: 100%;
+}
+#header-logo-kantar {
+    margin-top: 10px;
+    margin-left: 15px;
+    width: 200px;
+}
+#header-logo-motivemix {
+    margin-top: 5px;
+    margin-right: 15px;
+    width: 110px;
+    float: right;
+}
+
+#gold-line {
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2da64+1,a27700+18,f2da64+51,d7b446+71,987000+100 */
+    background: linear-gradient(to bottom,  #f2da64 1%,#a27700 18%,#f2da64 51%,#d7b446 71%,#987000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+/* ----------- SIDE TEXT ----------- */
+
+#chart #chart-text {
+    text-align: left;
+    font-size: 1.5em;
+    padding-right: 3em;
+    font-weight: 200;
+    color: white;
+
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* ----------- CHART ----------- */
+
+#chart {
+    text-align: center;
+    margin: 0 auto;
+    width: 1920px;
+    height: 1080px;
+
+    font-size: 16px;
+
+    display: grid;
+    grid-template-columns: 65% auto;
+    align-items: center;
+}
+
+#chart canvas {
+    grid-column: 1;
+    grid-row: 1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#chart svg {
+    grid-column: 1;
+    grid-row: 1;
+    pointer-events: none;
+    z-index: 2;
+    overflow: visible;
+}
+
+.subtitle {
+    fill: white;
+    font-size: 2.2em;
+    font-weight: 200;
+}
+
+.credits {
+    fill: white;
+    opacity: 0.6;
+    font-size: 1.1em;
+    font-weight: 200;
+    text-anchor: middle;
+    line-height: 1.5;
+}
+
+.legend-title {
+    text-anchor: middle;
+    font-size: 0.8em;
+    font-weight: 300;
+    fill: #bbbbbb;
+}
+
+.legend-label {
+    text-anchor: middle;
+    font-size: 0.7em;
+    fill: #bbbbbb;
+}
+
+/* ----------- ANNOTATIONS ----------- */
+
+.annotation-group {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.annotation-note-title {
+    fill: white;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+.annotation-note-label {
+    fill: rgb(199, 199, 199);
+    font-size: 0.95em;
+    font-style: italic;
+}
+
+.note-line, .connector, .annotation-subject .subject {
+    stroke: white;
+}
+
+.annotation-text {
+    color: var(--annotation-color);
+}
+.annotation-note .annotation-note-title {
+    fill: var(--annotation-color);
+}
+.annotation-note path, .annotation-note .subject {
+    stroke: var(--annotation-color);
+    stroke-width: 2px;
+}
